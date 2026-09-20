@@ -1,0 +1,23 @@
+## Build
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+.vs/
+.idea/
+*.user
+*.suo
+
+## NuGet
+*.nupkg
+**/packages/*
+
+## Pack output
+dist/
+
+## OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
+*.log
