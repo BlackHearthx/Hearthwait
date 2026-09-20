@@ -1,7 +1,7 @@
 {
   "name": "Hearthwait",
   "version_number": "1.0.0",
-  "website_url": "",
+  "website_url": "https://github.com/BlackHearthx/Hearthwait",
   "description": "Live hover timers for everything that waits: mead, metal, honey, sap, cooking, crops, bushes, fires, eggs, growing animals, taming and birth.",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2200",
