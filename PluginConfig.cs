@@ -11,6 +11,11 @@ namespace Hearthwait
         internal static ConfigEntry<bool> EnableCooking;
         internal static ConfigEntry<bool> EnablePlant;
         internal static ConfigEntry<bool> EnablePickable;
+        internal static ConfigEntry<bool> EnableFireplace;
+        internal static ConfigEntry<bool> EnableEgg;
+        internal static ConfigEntry<bool> EnableGrowup;
+        internal static ConfigEntry<bool> EnableTame;
+        internal static ConfigEntry<bool> EnablePregnant;
 
         internal static void Bind(ConfigFile cfg)
         {
@@ -21,7 +26,12 @@ namespace Hearthwait
             EnableSap = cfg.Bind(sec, "Sap collector", true, "Time until the next sap and until the collector is full.");
             EnableCooking = cfg.Bind(sec, "Cooking and oven", true, "Time until food is done, and until it burns.");
             EnablePlant = cfg.Bind(sec, "Crops and saplings", true, "Time until a planted crop or tree is grown.");
-            EnablePickable = cfg.Bind(sec, "Respawning plants", true, "Time until picked berries, mushrooms and similar grow back.");
+            EnablePickable = cfg.Bind(sec, "Bushes and nature", true, "Ready label on bushes/berries/mushrooms; countdown when picked and growing back.");
+            EnableFireplace = cfg.Bind(sec, "Fires and torches", true, "How long the fire will keep burning.");
+            EnableEgg = cfg.Bind(sec, "Eggs hatching", true, "Time until a warm egg hatches.");
+            EnableGrowup = cfg.Bind(sec, "Young animals growing", true, "Time until a cub/chick/piglet grows up.");
+            EnableTame = cfg.Bind(sec, "Taming and feeding", true, "Time left to tame, and how long until hungry again.");
+            EnablePregnant = cfg.Bind(sec, "Pregnancy", true, "Time until offspring is born.");
         }
     }
 }

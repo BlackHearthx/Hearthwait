@@ -25,10 +25,35 @@ namespace Hearthwait
                 loc.AddTranslation("English", new Dictionary<string, string>
                 {
                     { "hearthwait_ready_in", "Ready in {0}" },
+                    { "hearthwait_ready_now", "Ready" },
                     { "hearthwait_next_in", "Next in {0}" },
                     { "hearthwait_full_in", "Full in {0}" },
+                    { "hearthwait_full_ready", "Full — ready to collect" },
                     { "hearthwait_burn_in", "Burns in {0}" },
-                    { "hearthwait_waiting_wind", "Waiting on the wind" }
+                    { "hearthwait_burnt", "Burnt" },
+                    { "hearthwait_waiting_wind", "Waiting on the wind" },
+                        { "hearthwait_plant_stalled", "Won't grow like this" },
+                        { "hearthwait_ferment_paused", "Paused — needs cover" },
+                    { "hearthwait_needs_fuel", "Needs fuel" },
+                    { "hearthwait_empty", "Empty" },
+                    { "hearthwait_picked", "Picked" },
+                    { "hearthwait_grows_in", "Grows back in {0}" },
+                    { "hearthwait_harvest_ready", "Ready — {0}" },
+                    { "hearthwait_burns_for", "Burns for {0}" },
+                    { "hearthwait_fire_out", "Fire is out" },
+                    { "hearthwait_egg_stacked", "Split the stack to hatch" },
+                    { "hearthwait_egg_cold", "Too cold to hatch" },
+                    { "hearthwait_hatches_in", "Hatches in {0}" },
+                    { "hearthwait_hatch_ready", "About to hatch" },
+                    { "hearthwait_grows_up_in", "Grows up in {0}" },
+                    { "hearthwait_grown_ready", "Ready to grow up" },
+                    { "hearthwait_tames_in", "Tames in {0}" },
+                    { "hearthwait_tame_ready", "Ready to tame" },
+                    { "hearthwait_fed_for", "Fed for {0}" },
+                    { "hearthwait_hungry", "Hungry" },
+                    { "hearthwait_births_in", "Births in {0}" },
+                    { "hearthwait_birth_ready", "About to give birth" },
+                    { "hearthwait_love_points", "Love {0}/{1}" }
                 });
                 Jotunn.Logger.LogWarning("Hearthwait: Translations folder missing — English inline fallback");
             }

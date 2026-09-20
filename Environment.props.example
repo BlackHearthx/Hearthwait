@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copy this file to Environment.props and point the paths at your own machine.
+  Environment.props is git-ignored because these paths are per-developer.
+
+  MOD_DEPLOYPATH is optional: set it and every build drops the DLL and the
+  Translations folder straight into that profile. Leave it empty to skip.
+-->
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VALHEIM_INSTALL>C:\Program Files (x86)\Steam\steamapps\common\Valheim</VALHEIM_INSTALL>
+    <BEPINEX_PATH>$(VALHEIM_INSTALL)\BepInEx</BEPINEX_PATH>
+    <MOD_DEPLOYPATH></MOD_DEPLOYPATH>
+  </PropertyGroup>
+</Project>

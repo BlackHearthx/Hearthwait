@@ -23,7 +23,7 @@ namespace Hearthwait
             ModLocalization.Register();
 
             var harmony = new Harmony(PluginGUID);
-            harmony.PatchAll();
+            HoverTimePatch.Apply(harmony);
 
             Jotunn.Logger.LogInfo($"{PluginName} {PluginVersion} loaded");
         }

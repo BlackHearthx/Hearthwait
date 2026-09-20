@@ -16,11 +16,17 @@
     <DebugType>portable</DebugType>
     <Version>1.0.0</Version>
     <Authors>blackhearthx</Authors>
-    <Description>Hover remaining time for homestead waits: mead, smelters, bees, sap, cooking, crops.</Description>
+    <Description>Hover timers for everything on the homestead that takes time: mead, metal, honey, sap, cooking, crops, bushes, fires, eggs, growing animals, taming and birth.</Description>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="JotunnLib" Version="2.29.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_ref\**" />
+    <None Remove="_ref\**" />
+    <EmbeddedResource Remove="_ref\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,5 +46,32 @@
       DestinationFiles="@(_HwLocFiles->'$(MOD_DEPLOYPATH)\Translations\%(RecursiveDir)%(Filename)%(Extension)')"
       Condition="'$(MOD_DEPLOYPATH)' != '' And '@(_HwLocFiles)' != ''"
       SkipUnchangedFiles="true" />
+  </Target>
+
+  <!-- dotnet build Hearthwait.csproj -c Release -t:Package -->
+  <Target Name="Package" DependsOnTargets="Build">
+    <PropertyGroup>
+      <_HwStage>$(MSBuildProjectDirectory)\dist\stage</_HwStage>
+      <_HwZip>$(MSBuildProjectDirectory)\dist\Hearthwait-$(Version).zip</_HwZip>
+    </PropertyGroup>
+
+    <RemoveDir Directories="$(_HwStage)" />
+    <MakeDir Directories="$(_HwStage)\plugins" />
+
+    <!-- Thunderstore reads these from the zip root; the mod itself ships under plugins. -->
+    <Copy SourceFiles="manifest.json;README.md;CHANGELOG.md;icon.png" DestinationFolder="$(_HwStage)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(_HwStage)\plugins" />
+
+    <ItemGroup>
+      <_HwPkgLoc Include="$(OutputPath)Translations\**\*.json" />
+    </ItemGroup>
+    <Copy
+      SourceFiles="@(_HwPkgLoc)"
+      DestinationFiles="@(_HwPkgLoc->'$(_HwStage)\plugins\Translations\%(RecursiveDir)%(Filename)%(Extension)')" />
+
+    <Delete Files="$(_HwZip)" />
+    <ZipDirectory SourceDirectory="$(_HwStage)" DestinationFile="$(_HwZip)" />
+    <RemoveDir Directories="$(_HwStage)" />
+    <Message Importance="high" Text="Thunderstore package ready: $(_HwZip)" />
   </Target>
 </Project>

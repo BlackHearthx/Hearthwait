@@ -2,7 +2,7 @@
   "name": "Hearthwait",
   "version_number": "1.0.0",
   "website_url": "",
-  "description": "See how long until mead, metal, honey, sap, food and crops are ready. Hover only — homestead timers, not a combat HUD.",
+  "description": "Live hover timers for everything that waits: mead, metal, honey, sap, cooking, crops, bushes, fires, eggs, growing animals, taming and birth.",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2200",
     "ValheimModding-Jotunn-2.29.2"
